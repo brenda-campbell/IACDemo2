@@ -18,11 +18,8 @@ jobs:
       # Log into Azure
     - uses: azure/login@v1
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
-        auth-type: servicePrincipal
+        creds: ${{ secrets.AZURE_CREDENTIALS }} # Ensure this secret contains the JSON with clientId, clientSecret, subscriptionId, and tenantId
+        auth-type: SERVICE_PRINCIPAL
 
       # Deploy ARM template
     - name: Run ARM deploy
