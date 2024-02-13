@@ -9,7 +9,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "current" {
- name = "MY_TEST_RG"
+ name = "TEST-20240213-TERRA-RG"
 }
 
 locals {
